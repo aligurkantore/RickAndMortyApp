@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.characterdetails.CharacterDetailsFragment">
+
+    <ImageView
+        android:id="@+id/detailsImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@color/teal_700"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/detailsNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name : "
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/detailsImage"
+        app:layout_constraintTop_toBottomOf="@id/detailsImage"/>
+
+    <TextView
+        android:id="@+id/detailsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ali Gurkan Tore"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@id/detailsNameText"
+        app:layout_constraintTop_toBottomOf="@id/detailsImage"/>
+
+    <TextView
+        android:id="@+id/detailsGenderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gender : "
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/detailsNameText"
+        app:layout_constraintTop_toBottomOf="@id/detailsNameText"/>
+
+    <TextView
+        android:id="@+id/detailsGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Male"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@id/detailsGenderText"
+        app:layout_constraintTop_toBottomOf="@id/detailsName"/>
+
+    <TextView
+        android:id="@+id/detailsSpeciesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Species : "
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/detailsGenderText"
+        app:layout_constraintTop_toBottomOf="@id/detailsGenderText"/>
+
+    <TextView
+        android:id="@+id/detailsSpecies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alive"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@id/detailsSpeciesText"
+        app:layout_constraintTop_toBottomOf="@id/detailsGender"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
