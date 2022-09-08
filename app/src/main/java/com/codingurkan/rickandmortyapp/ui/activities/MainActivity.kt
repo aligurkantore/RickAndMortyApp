@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.charactersListFragment, R.id.characterDetailsFragment -> {
+                R.id.charactersListFragment, R.id.characterDetailsFragment,R.id.characterEpisodesFragment -> {
                     binding?.bottomNavigationView?.visibility = View.VISIBLE
                 }
                 else -> {

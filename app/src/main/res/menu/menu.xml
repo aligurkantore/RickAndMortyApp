@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/photoListFragment"
+    <item android:id="@+id/charactersListFragment"
         android:title=""
         android:icon="@drawable/home_page"/>
 
-    <item android:id="@+id/photoSearchFragment"
+    <item android:id="@+id/characterEpisodesFragment"
         android:title=""
         android:icon="@drawable/clapperboard"/>
 
