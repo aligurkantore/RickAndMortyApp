@@ -6,11 +6,9 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiService {
-    @GET("character")
+    @GET("character/")
     suspend fun characterRequest(
-        @Query("next") next : String,
-        @Query("prev") prev : String,
-        @Query("pages") pages : Int
+        @Query("page") pages : Int
     ) : Response<CharactersResponseModel>
 
     @GET("episode")
