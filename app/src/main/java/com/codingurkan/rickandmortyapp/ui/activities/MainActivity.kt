@@ -45,5 +45,4 @@ class MainActivity : AppCompatActivity() {
             NavigationUI.setupWithNavController(bottomNavigationView, navController)
         }
     }
-
 }

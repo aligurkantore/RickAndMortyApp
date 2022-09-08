@@ -17,26 +17,19 @@ private val itemClickListener : ItemClickListener) : RecyclerView.Adapter<Charac
         val view = CharacterListItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return CharacterVH(view)
     }
-
     override fun onBindViewHolder(holder: CharacterVH, position: Int) {
         with(holder.binding){
             val data = characterList[position]
             characterImage.loadImage(characterList[position].image)
             characterName.text = data.name
-            //characterStatus.text = data.status
-            //characterSpecies.text = data.species
-            //characterGender.text = data.gender
-
             characterImage.setOnClickListener {
                 itemClickListener.onClick(data)
             }
         }
     }
-
     override fun getItemCount(): Int {
         return characterList.size
     }
-
     interface ItemClickListener{
         fun onClick(data : Result)
     }

@@ -30,18 +30,15 @@ class CharactersListFragment : Fragment() {
         binding = FragmentCharacterListBinding.inflate(layoutInflater)
         return binding?.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViewModel()
         initObserver()
         viewModel?.downloadCharacters(1)
     }
-
     private fun initViewModel() {
         viewModel = ViewModelProvider(this)[CharactersListViewModel::class.java]
     }
-
     private fun initObserver() {
         viewModel?.charactersList?.observe(viewLifecycleOwner) {
             it?.let {
@@ -49,7 +46,6 @@ class CharactersListFragment : Fragment() {
             }
         }
     }
-
    private fun initAdapter(data: List<Result>) {
         adapter = CharacterAdapter(data, object : CharacterAdapter.ItemClickListener {
             override fun onClick(data: Result) {
@@ -62,6 +58,5 @@ class CharactersListFragment : Fragment() {
             recyclerView.adapter = adapter
             recyclerView.layoutManager = GridLayoutManager(requireContext(),2)
         }
-
     }
 }
