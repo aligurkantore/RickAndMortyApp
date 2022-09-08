@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.codingurkan.rickandmortyapp.databinding.CharacterListItemBinding
-import com.codingurkan.rickandmortyapp.databinding.CharactersListItemBinding
 import com.codingurkan.rickandmortyapp.model.Result
 import com.codingurkan.rickandmortyapp.utils.loadImage
 

@@ -17,10 +17,20 @@ class CharactersListViewModel @Inject constructor(private val repository: Charac
 
     private var job : Job? = null
     val charactersList =MutableLiveData<CharactersResponseModel>()
+    val pageNumber = MutableLiveData<Int>().also { it.value = 1 }
+    val nextPage = MutableLiveData<Int>().also { it.value = 2 }
+    val prevPage = MutableLiveData<Int>().also { it.value = null }
 
-    fun downloadCharacters(pages : Int){
+    /*
+    init {
+        downloadCharacters(1,"","")
+    }
+
+     */
+
+    fun downloadCharacters(next : String , prev : String,pages : Int){
         job = viewModelScope.launch(Dispatchers.IO){
-            val response = repository.charactersListRequest(pages)
+            val response = repository.charactersListRequest(next,prev,pages)
             withContext(Dispatchers.Main){
                 if (response.isSuccessful){
                     response.body()?.let { _data ->
@@ -29,5 +39,9 @@ class CharactersListViewModel @Inject constructor(private val repository: Charac
                 }
             }
         }
+    }
+    override fun onCleared() {
+        super.onCleared()
+        job?.cancel()
     }
 }

@@ -8,10 +8,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.codingurkan.rickandmortyapp.R
 import com.codingurkan.rickandmortyapp.adapter.CharacterAdapter
-import com.codingurkan.rickandmortyapp.databinding.FragmentCharacterDetailsBinding
 import com.codingurkan.rickandmortyapp.databinding.FragmentCharacterListBinding
 import com.codingurkan.rickandmortyapp.model.Result
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,15 +32,65 @@ class CharactersListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initViewModel()
         initObserver()
-        viewModel?.downloadCharacters(1)
+        initializePageNumber()
     }
     private fun initViewModel() {
         viewModel = ViewModelProvider(this)[CharactersListViewModel::class.java]
     }
     private fun initObserver() {
-        viewModel?.charactersList?.observe(viewLifecycleOwner) {
-            it?.let {
-                initAdapter(it.results)
+        viewModel?.apply {
+            charactersList.observe(viewLifecycleOwner) {
+                it?.let {
+                    initAdapter(it.results)
+                }
+            }
+            nextPage.observe(viewLifecycleOwner){ _nextPage ->
+                pageNumber.value?.let { _pageNumber ->
+                    viewModel?.downloadCharacters(_nextPage.toString(),prevPage.toString(),_pageNumber)
+                }
+            }
+            prevPage.observe(viewLifecycleOwner){ _prevPage ->
+                pageNumber.value?.let { _pageNumber ->
+                    viewModel?.downloadCharacters(nextPage.toString(),_prevPage.toString(),_pageNumber)
+                }
+            }
+            pageNumber.observe(viewLifecycleOwner) { _pageNumber ->
+                if (_pageNumber == 1) {
+                    binding?.apply {
+                        btnBack.visibility = View.INVISIBLE
+                        tvPage.text = _pageNumber.toString()
+                    }
+                    nextPage.value?.let {
+                        downloadCharacters(nextPage.toString(), prevPage.toString(),_pageNumber)
+                    }
+                    prevPage.value?.let {
+                        downloadCharacters(nextPage.toString(), prevPage.toString(),_pageNumber)
+                    }
+                } else {
+                    binding?.apply {
+                        btnBack.visibility = View.VISIBLE
+                        tvPage.text = _pageNumber.toString()
+                    }
+                    nextPage.value?.let {
+                        downloadCharacters(nextPage.toString(), prevPage.toString(),_pageNumber)
+                    }
+                    prevPage.value?.let {
+                        downloadCharacters(nextPage.toString(), prevPage.toString(),_pageNumber)
+                    }
+
+                }
+            }
+        }
+    }
+    private fun initializePageNumber(){
+        viewModel?.apply {
+            binding?.apply {
+                btnBack.setOnClickListener {
+                    pageNumber.value = pageNumber.value?.plus(-1)
+                }
+                btnNext.setOnClickListener {
+                    pageNumber.value = pageNumber.value?.plus(1)
+                }
             }
         }
     }
