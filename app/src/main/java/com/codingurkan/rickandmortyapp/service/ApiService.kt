@@ -15,6 +15,6 @@ interface ApiService {
     suspend fun episodeRequest(
         //@Query("next") next : String,
         //@Query("prev") prev : String,
-        //@Query("pages") pages : Int
+        //@Query("page") pages : Int
     ) : Response<CharactersResponseModel>
 }

@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -39,8 +41,13 @@ class CharactersListFragment : Fragment() {
     }
     private fun initObserver() {
         viewModel?.apply {
-            charactersList.observe(viewLifecycleOwner) {
-                it?.results?.let (::initAdapter)
+            charactersList.observe(viewLifecycleOwner) { _data ->
+                if (pageNumber.value == _data.info.count/20){
+                    binding?.btnNext?.visibility= INVISIBLE
+                }else{
+                    binding?.btnNext?.visibility= VISIBLE
+                }
+                _data?.results?.let (::initAdapter)
             }
             pageNumber.observe(viewLifecycleOwner) { _pageNumber ->
                 _pageNumber?.let (::downloadCharacters)

@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.codingurkan.rickandmortyapp"
@@ -43,7 +43,7 @@ dependencies {
     def retrofitVersion = '2.9.0'
     def lifecycle_version = "2.5.1"
 
-    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.0'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -54,8 +54,8 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // Kotlin
-    implementation "androidx.navigation:navigation-fragment-ktx:2.5.1"
-    implementation "androidx.navigation:navigation-ui-ktx:2.5.1"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.5.2"
+    implementation "androidx.navigation:navigation-ui-ktx:2.5.2"
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.13.2'
@@ -80,8 +80,6 @@ dependencies {
     implementation "com.google.dagger:hilt-android:2.42"
     kapt "com.google.dagger:hilt-compiler:2.42"
 
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
-
 
     //Firebase
     implementation platform('com.google.firebase:firebase-bom:30.0.2')
@@ -89,15 +87,17 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-firestore-ktx'
 
-    implementation 'com.google.firebase:firebase-database:20.0.5'
+    implementation 'com.google.firebase:firebase-database:20.0.6'
 
-    implementation 'com.google.android.gms:play-services-auth:20.2.0'
+    implementation 'com.google.android.gms:play-services-auth:20.3.0'
 
 
 
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.7'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.8'
 
-    // Also declare the dependency for the Google Play services library and specify its version
-    implementation 'com.google.android.gms:play-services-auth:20.2.0'
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:30.4.1')
+
+
     
 }
