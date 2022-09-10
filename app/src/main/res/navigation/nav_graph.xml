@@ -41,8 +41,8 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/characterEpisodesFragment"
-        android:name="com.codingurkan.rickandmortyapp.ui.fragments.characterepisodes.CharacterEpisodesFragment"
-        android:label="fragment_character_episodes"
-        tools:layout="@layout/fragment_character_episodes" />
+        android:id="@+id/episodeListFragment"
+        android:name="com.codingurkan.rickandmortyapp.ui.fragments.episodelist.EpisodeListFragment"
+        android:label="fragment_episode_list"
+        tools:layout="@layout/fragment_episode_list" />
 </navigation>

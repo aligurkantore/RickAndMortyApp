@@ -1,6 +1,7 @@
 package com.codingurkan.rickandmortyapp.model
 
 data class CharactersResponseModel(
-    val info: İnfo,
-    val results: List<Result>
+    val info: Info,
+    val results: List<Result>,
+    val episodes : List<Episode>
 )

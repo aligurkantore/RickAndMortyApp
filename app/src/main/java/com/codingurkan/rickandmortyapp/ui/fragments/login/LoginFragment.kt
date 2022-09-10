@@ -43,6 +43,7 @@ class LoginFragment : Fragment() {
         binding?.buttonLogin?.setOnClickListener {
             val email = binding?.emailLogin?.text.toString()
             val password = binding?.passwordLogin?.text.toString()
+            /*
             if (email.isNotEmpty() && password.isNotEmpty()){
                 auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
                     findNavController().navigate(R.id.action_loginFragment_to_charactersListFragment)
@@ -52,6 +53,9 @@ class LoginFragment : Fragment() {
             }else{
                 Toast.makeText(requireContext(), "You entered incomplete information", Toast.LENGTH_SHORT).show()
             }
+
+             */
+            findNavController().navigate(R.id.action_loginFragment_to_charactersListFragment)
         }
     }
     private fun navigateToRegisterPage(){

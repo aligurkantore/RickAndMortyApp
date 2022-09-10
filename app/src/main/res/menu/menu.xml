@@ -5,7 +5,7 @@
         android:title=""
         android:icon="@drawable/home_page"/>
 
-    <item android:id="@+id/characterEpisodesFragment"
+    <item android:id="@+id/episodeListFragment"
         android:title=""
         android:icon="@drawable/clapperboard"/>
 
