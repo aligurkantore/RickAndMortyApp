@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "142546858230",
-    "project_id": "rickandmorty-91501",
-    "storage_bucket": "rickandmorty-91501.appspot.com"
+    "project_number": "835850626367",
+    "project_id": "rickandmortydatabase-da204",
+    "storage_bucket": "rickandmortydatabase-da204.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:142546858230:android:624b80120647ced103bcd7",
+        "mobilesdk_app_id": "1:835850626367:android:56fab15b8c18adab7a1f8a",
         "android_client_info": {
           "package_name": "com.codingurkan.rickandmortyapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "142546858230-p471u8fic627j6jviml0b8cleca7n6nn.apps.googleusercontent.com",
+          "client_id": "835850626367-95e25be7skcn47n5li94ove6qsqu4ran.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBGookE-b3aSzGa5ePjABaeI2rcEycmtIA"
+          "current_key": "AIzaSyALhFngGTlQGcosY0HKiUtmRtZtS9RCRsw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "142546858230-p471u8fic627j6jviml0b8cleca7n6nn.apps.googleusercontent.com",
+              "client_id": "835850626367-95e25be7skcn47n5li94ove6qsqu4ran.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

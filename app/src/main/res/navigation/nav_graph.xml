@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/charactersListFragment">
 
     <fragment
         android:id="@+id/charactersListFragment"
@@ -20,16 +20,25 @@
         android:label="fragment_character_details"
         tools:layout="@layout/fragment_character_details" />
     <fragment
+        android:id="@+id/episodeListFragment"
+        android:name="com.codingurkan.rickandmortyapp.ui.fragments.episodelist.EpisodeListFragment"
+        android:label="fragment_episode_list"
+        tools:layout="@layout/fragment_episode_list" >
+        <action
+            android:id="@+id/action_episodeListFragment_to_episodeDetailsFragment"
+            app:destination="@id/episodeDetailsFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/loginFragment"
         android:name="com.codingurkan.rickandmortyapp.ui.fragments.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_charactersListFragment"
-            app:destination="@id/charactersListFragment" />
-        <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_charactersListFragment"
+            app:destination="@id/charactersListFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -41,8 +50,8 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/episodeListFragment"
-        android:name="com.codingurkan.rickandmortyapp.ui.fragments.episodelist.EpisodeListFragment"
-        android:label="fragment_episode_list"
-        tools:layout="@layout/fragment_episode_list" />
+        android:id="@+id/episodeDetailsFragment"
+        android:name="com.codingurkan.rickandmortyapp.ui.fragments.episodedetails.EpisodeDetailsFragment"
+        android:label="fragment_episode_details"
+        tools:layout="@layout/fragment_episode_details" />
 </navigation>
