@@ -40,7 +40,7 @@ class EpisodeListFragment : Fragment() {
     }
     private fun initObserver(){
         viewModel?.episodeList?.observe(viewLifecycleOwner){
-            it?.resultsses?.let(::initAdapter)
+            it?.results?.let(::initAdapter)
         }
     }
     private fun initAdapter(data : List<Results>){

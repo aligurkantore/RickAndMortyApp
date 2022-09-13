@@ -18,7 +18,6 @@ class EpisodeListViewModel @Inject constructor(private val repository : EpisodeL
 
     private var job : Job? = null
     val episodeList = MutableLiveData<EpisodeResponseModel>()
-    val errorMessage = MutableLiveData<String?>()
 
     fun downloadEpisodes(){
         job = viewModelScope.launch(Dispatchers.IO){
@@ -28,8 +27,6 @@ class EpisodeListViewModel @Inject constructor(private val repository : EpisodeL
                     response.body()?.let { _data ->
                         episodeList.postValue(_data)
                     }
-                }else{
-                    errorMessage.postValue("Hata!!!")
                 }
             }
         }
